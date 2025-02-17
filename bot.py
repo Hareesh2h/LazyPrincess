@@ -45,7 +45,17 @@ PORT = "8080"
 LazyPrincessBot.start()
 loop = asyncio.get_event_loop()
 
-
+class Bot(Client):
+    def __init__(self):
+        super().__init__(
+            session_name=SESSTION,
+            api_id=API_ID,
+            api_hash_API_HASH,
+            bot_token=BOT_TOKEN,
+            workers=50,
+            plugins={"root": "plugins"},
+            sleep_threshold=5,
+        )
 async def Lazy_start():
     print('\n')
     print(' Initalizing Telegram Bot ')
