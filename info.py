@@ -124,11 +124,11 @@ if 'DYNO' in environ:
 
 else:
     ON_HEROKU = False
-HAS_SSL=bool(getenv('HAS_SSL',False))
+HAS_SSL=bool(getenv('HAS_SSL',True))
 if HAS_SSL:
     URL = "https://{}/".format(pdiskshortener.com)
 else:
-    URL = "http://{}/".format(pdiskshortener.com)
+    URL = "http://{}/".format(pdiskshortener.com")
 BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001987654567")).split())) 
 OWNER_USERNAME = "hareeshtalari"
 
